@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java HTTP服务器测试</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>欢迎访问Java HTTP服务器</h1>
+            <img src="images/test.png" alt="Server Logo" class="logo">
+        </header>
+
+        <main>
+            <section class="info">
+                <h2>服务器信息</h2>
+                <p>这是一个基于Java Socket编程实现的多线程HTTP服务器</p>
+                <p>支持GET、HEAD、POST请求处理</p>
+                <p>当前会话ID: <span id="session-id">加载中...</span></p>
+            </section>
+
+            <section class="test-section">
+                <h2>功能测试</h2>
+                
+                <!-- GET 测试 -->
+                <div class="test-item">
+                    <h3>GET 请求测试</h3>
+                    <button onclick="testGet()">发送GET请求</button>
+                    <div id="get-result" class="result"></div>
+                </div>
+
+                <!-- HEAD 测试 -->
+                <div class="test-item">
+                    <h3>HEAD 请求测试</h3>
+                    <button onclick="testHead()">发送HEAD请求</button>
+                    <div id="head-result" class="result"></div>
+                </div>
+
+                <!-- POST 测试 -->
+                <div class="test-item">
+                    <h3>POST 请求测试</h3>
+                    <form id="post-form" onsubmit="return testPost(event)">
+                        <input type="text" name="message" placeholder="输入消息" required>
+                        <input type="text" name="username" placeholder="用户名" required>
+                        <button type="submit">发送POST请求</button>
+                    </form>
+                    <div id="post-result" class="result"></div>
+                </div>
+            </section>
+
+            <section class="image-gallery">
+                <h2>图片展示</h2>
+                <div class="gallery">
+                    <img src="images/test.png" alt="测试图片" class="gallery-img">
+                    <p>支持PNG图片格式展示</p>
+                </div>
+            </section>
+
+            <section class="file-test">
+                <h2>文件类型测试</h2>
+                <div class="test-item">
+                    <h3>不同文件类型访问测试</h3>
+                    <button onclick="testFileTypes()">测试所有文件类型</button>
+                    <div id="file-test-result" class="result"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Java HTTP服务器项目</p>
+            <p>支持HTML、CSS、JS、PNG等多种文件类型</p>
+        </footer>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>
